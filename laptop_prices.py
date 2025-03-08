@@ -31,7 +31,7 @@ final_df = pd.concat([num_df, encoded_df], axis=1)
 Y = final_df['Price (%24)']
 X = final_df.drop('Price (%24)', axis=1)
 X_train, X_test, Y_train, Y_test = train_test_split(
-    X, Y, test_size=0.2, random_state=42
+    X, Y, test_size=0.4, random_state=42
 )
 
 feature_scaler = StandardScaler()
