@@ -12,6 +12,7 @@ import numpy as np
 
 # Downloading and Cleaning Data
 matplotlib.use('TkAgg')
+# Dataset is broken now :(
 croissant_dataset = mlc.Dataset('https://www.kaggle.com/datasets/asinow/laptop-price-dataset/croissant/download')
 df = pd.DataFrame(croissant_dataset.records(record_set='laptop_prices.csv'))
 
@@ -31,7 +32,7 @@ final_df = pd.concat([num_df, encoded_df], axis=1)
 Y = final_df['Price (%24)']
 X = final_df.drop('Price (%24)', axis=1)
 X_train, X_test, Y_train, Y_test = train_test_split(
-    X, Y, test_size=0.4, random_state=42
+    X, Y, test_size=0.4, random_state=1
 )
 
 feature_scaler = StandardScaler()
